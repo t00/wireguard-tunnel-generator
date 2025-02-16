@@ -39,7 +39,7 @@ check_dependency() {
     fi
 }
 
-check_dependency "ipcalc-ng" "ipcalc-ng"
+check_dependency "ipcalc" "ipcalc"
 check_dependency "wg" "wireguard-tools"
 check_dependency "qrencode" "qrencode"
 
@@ -79,8 +79,8 @@ if [[ -z "$IP_ADDR" ]]; then
     exit 1
 fi
 
-# Perform IP address validation (using ipcalc-ng)
-if ! ipcalc-ng -cs "$IP_ADDR" ; then
+# Perform IP address validation (using ipcalc)
+if ! ipcalc -cs "$IP_ADDR" ; then
     echo "$0: invalid ip address ($IP_ADDR)"
     exit 1
 fi
